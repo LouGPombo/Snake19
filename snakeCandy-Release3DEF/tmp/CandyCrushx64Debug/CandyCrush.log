@@ -1,0 +1,13 @@
+﻿  Menu.cc
+  main.cc
+  Grid.cc
+  GameScene.cc
+c:\users\lou\desktop\snakecandyrelease3\nueva carpeta\snakecandyon\snakecandy\src\candycrush\gamescene.cc(52): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\lou\desktop\snakecandyrelease3\nueva carpeta\snakecandyon\snakecandy\src\candycrush\gamescene.cc(75): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\lou\desktop\snakecandyrelease3\nueva carpeta\snakecandyon\snakecandy\src\candycrush\gamescene.cc(115): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+c:\users\lou\desktop\snakecandyrelease3\nueva carpeta\snakecandyon\snakecandy\src\candycrush\gamescene.cc(116): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+c:\users\lou\desktop\snakecandyrelease3\nueva carpeta\snakecandyon\snakecandy\src\candycrush\gamescene.cc(180): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  CandyCrush.vcxproj -> C:\Users\Lou\Desktop\snakeCandyRelease3\Nueva carpeta\snakeCandyON\snakeCandy\\bin\x64Debug\CandyCrush.exe
+  CandyCrush.vcxproj -> C:\Users\Lou\Desktop\snakeCandyRelease3\Nueva carpeta\snakeCandyON\snakeCandy\\bin\x64Debug\CandyCrush.pdb (Full PDB)
+  0 archivo(s) copiado(s)

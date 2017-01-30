@@ -1,0 +1,12 @@
+﻿  Map.cpp
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(168): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(182): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(194): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(209): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(220): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(231): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(246): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(264): warning C4715: 'Map::checkApple': no todas las rutas de acceso de control devuelven un valor
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(256): warning C4715: 'Map::eatApple': no todas las rutas de acceso de control devuelven un valor
+  ConsoleApplication.vcxproj -> C:\Users\Guille\Desktop\Release_3 - versio¦ün moodle\Debug\ConsoleApplication.exe
+  ConsoleApplication.vcxproj -> C:\Users\Guille\Desktop\Release_3 - versio¦ün moodle\Debug\ConsoleApplication.pdb (Full PDB)
