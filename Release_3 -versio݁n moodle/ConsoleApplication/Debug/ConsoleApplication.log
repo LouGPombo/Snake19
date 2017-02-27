@@ -1,12 +1,17 @@
-﻿  Map.cpp
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(168): warning C4305: '-=': truncamiento de 'double' a 'float'
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(182): warning C4305: '-=': truncamiento de 'double' a 'float'
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(194): warning C4305: '-=': truncamiento de 'double' a 'float'
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(209): warning C4305: '-=': truncamiento de 'double' a 'float'
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(220): warning C4305: '-=': truncamiento de 'double' a 'float'
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(231): warning C4305: '-=': truncamiento de 'double' a 'float'
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(246): warning C4305: '-=': truncamiento de 'double' a 'float'
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(264): warning C4715: 'Map::checkApple': no todas las rutas de acceso de control devuelven un valor
-c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\map.cpp(256): warning C4715: 'Map::eatApple': no todas las rutas de acceso de control devuelven un valor
+﻿  Game.cpp
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(218): warning C4244: '=': conversión de 'clock_t' a 'float'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(219): warning C4244: '=': conversión de 'clock_t' a 'float'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(438): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(521): warning C4244: 'inicializando': conversión de 'std::streamoff' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(676): warning C4244: 'inicializando': conversión de 'std::streamoff' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(721): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(723): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(726): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(753): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(755): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(758): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(785): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(787): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\guille\desktop\release_3 - versio¦ün moodle\consoleapplication\game.cpp(790): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
   ConsoleApplication.vcxproj -> C:\Users\Guille\Desktop\Release_3 - versio¦ün moodle\Debug\ConsoleApplication.exe
   ConsoleApplication.vcxproj -> C:\Users\Guille\Desktop\Release_3 - versio¦ün moodle\Debug\ConsoleApplication.pdb (Full PDB)

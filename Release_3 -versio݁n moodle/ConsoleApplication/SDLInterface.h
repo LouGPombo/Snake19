@@ -52,6 +52,8 @@ public:
 	void setFontStyle(int style);
 	void drawText(std::string text, int backgroundColor, int foregroundColor, int x, int y);
 
+	void drawOnlyText(std::string text, int foregroundColor, int x, int y, int size);
+
 private:
 	InputManager _inputManager;						//Manage the input devices
 	TTF_Font* g_font;

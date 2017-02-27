@@ -24,7 +24,7 @@
 #define WHITE 4
 #define MAX_ROW 35
 #define MAX_COLUMN 20
-enum class GameState { INIT, PLAY, EXIT, MENU, GAMEMENU };
+enum class GameState { INIT, PLAY, EXIT, MENU, GAMEMENU, RANKING };
 enum movement {
 	UP,
 	DOWN,

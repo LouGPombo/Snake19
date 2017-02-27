@@ -266,6 +266,7 @@ bool Map::checkApple(int appleX, int appleY, int snakeX, int snakeY) {
 
 void Map::snakeDeath()
 {
+	_finalScore = getScore();
 	//setTime(0);
 	changeLevel(getLevel());
 	snake.setLive(snake.getLive()-1);
@@ -283,6 +284,7 @@ void Map::snakeDeath()
 }
 
 void Map::snakeDeath2() {
+	_finalScore = getScore();
 	changeLevel(getLevel());
 	snake.setLive(snake.getLive() - 1);
 	snake.setXPosition(2);

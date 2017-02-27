@@ -7,55 +7,56 @@
 /**
 * Initialize the game engine
 */
-SDLInterface::SDLInterface() 	{	
-		//Initialize all the SDL' subsystems, even they are not used for this example
-		//See SDL initialization flags for more details: SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+SDLInterface::SDLInterface() {
+	//Initialize all the SDL' subsystems, even they are not used for this example
+	//See SDL initialization flags for more details: SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		ErrorManagement::errorRunTime("[SDLInterface] SDL cannot be initialized");
 	}
 
-		//Initialize TTF fonts from SDL_ttf. Return 0 if it is successful
-	if (TTF_Init() == 0){
+	//Initialize TTF fonts from SDL_ttf. Return 0 if it is successful
+	if (TTF_Init() == 0) {
 		g_font = TTF_OpenFont("../sharedResources/fonts/orange juice 2.0.ttf", 30);
-		if (g_font == 0){
+		if (g_font == 0) {
 			ErrorManagement::errorRunTime("[SDLInterface] The font file cannot be loaded");
 		}
-	}else {
+	}
+	else {
 		ErrorManagement::errorRunTime("[SDLInterface] SDL TTF cannot be initialized");
 	}
 
-		//Initialize the color palette
+	//Initialize the color palette
 	for (int i = 0; i < GAME_BASIC_COLORS; i++) {
 		colorPalette[i].r = 0;
 		colorPalette[i].g = 0;
 		colorPalette[i].b = 0;
 		colorPalette[i].a = 210;
 	}
-	
+
 	colorPalette[RED].r = 255;
 	colorPalette[GREEN].g = 255;
 	colorPalette[BLUE].b = 255;
 	colorPalette[WHITE].r = 255;
 	colorPalette[WHITE].g = 255;
-	colorPalette[WHITE].b = 255;	
+	colorPalette[WHITE].b = 255;
 }
 
 /**
 * Destructor
 */
-SDLInterface::~SDLInterface() 	{
-		//Destroy Textures
+SDLInterface::~SDLInterface() {
+	//Destroy Textures
 	for (int i = 0; i < GAME_TEXTURES; i++) {
 		SDL_DestroyTexture(textures[i]);
 	}
 
-		//Destroy the renderer and the window
-	if (_renderer!=0)
+	//Destroy the renderer and the window
+	if (_renderer != 0)
 		SDL_DestroyRenderer(_renderer);
-	if (_window != 0) 
-		SDL_DestroyWindow(_window);		
+	if (_window != 0)
+		SDL_DestroyWindow(_window);
 
-		//Clean up SDL
+	//Clean up SDL
 	SDL_Quit();
 }
 
@@ -63,24 +64,24 @@ SDLInterface::~SDLInterface() 	{
 * Get the width of the original window
 * @return the int value of the width of the original window
 */
-int SDLInterface::getWindowWidth() { 
-		return _windowWidth; 
+int SDLInterface::getWindowWidth() {
+	return _windowWidth;
 }
 
 /*
 * Get the height of the original window
 * @return the int value of the height of the original window
 */
-int SDLInterface::getWindowHeight() { 
-	return _windowHeight; 
+int SDLInterface::getWindowHeight() {
+	return _windowHeight;
 }
 
 /*
 * Get the width of the window in the full screen mode
 * @return the int value of the width of the window in the full screen mode
 */
-int SDLInterface::getWindowWidthFullScreen() { 
-	return _windowWidthFullScreen; 
+int SDLInterface::getWindowWidthFullScreen() {
+	return _windowWidthFullScreen;
 }
 
 /*
@@ -88,7 +89,7 @@ int SDLInterface::getWindowWidthFullScreen() {
 * @return the int value of the height of the window in the full screen mode
 */
 int SDLInterface::getWindowHeightFullScreen() {
-	return _windowHeightFullScreen; 
+	return _windowHeightFullScreen;
 }
 
 /*
@@ -101,31 +102,31 @@ int SDLInterface::getWindowHeightFullScreen() {
 void SDLInterface::createWindow(std::string windowName, int windowWidth, int windowHeight, bool fullScreen) {
 	_windowWidth = windowWidth;
 	_windowHeight = windowHeight;
-	
-		//Update the window flags
+
+	//Update the window flags
 	Uint32 flags = SDL_WINDOW_SHOWN;
 	if (fullScreen) {
 		flags |= SDL_WINDOW_MAXIMIZED | SDL_WINDOW_BORDERLESS;
-	}	
+	}
 
-		//Create a SDL window centered into the middle of the screen
+	//Create a SDL window centered into the middle of the screen
 	_window = SDL_CreateWindow(windowName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _windowWidth, _windowHeight, flags);
 
-		//Declare display mode structure to be filled in. It will allow us to get the current resolution
+	//Declare display mode structure to be filled in. It will allow us to get the current resolution
 	SDL_DisplayMode current;
 	SDL_GetCurrentDisplayMode(0, &current);
 	_windowWidthFullScreen = current.w;
 	_windowHeightFullScreen = current.h;
-			
-		// if the window creation succeeded create our renderer.
+
+	// if the window creation succeeded create our renderer.
 	if (_window != 0) {
 		_renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_PRESENTVSYNC);
-			// Set to black
-		setWindowBackgroundColor(0, 0, 0, 255);		
+		// Set to black
+		setWindowBackgroundColor(0, 0, 0, 255);
 	}
 	else {
 		ErrorManagement::errorRunTime("[SDL Interface] A problem occurred when the window was created");
-	}	
+	}
 }
 
 /*
@@ -135,7 +136,7 @@ void SDLInterface::createWindow(std::string windowName, int windowWidth, int win
 * @param b is the blue component
 * @param a is the alpha component
 */
-void SDLInterface::setWindowBackgroundColor(int r, int g, int b, int a) {	
+void SDLInterface::setWindowBackgroundColor(int r, int g, int b, int a) {
 	windowBackGroundColor.r = r;
 	windowBackGroundColor.g = g;
 	windowBackGroundColor.b = b;
@@ -162,7 +163,7 @@ void SDLInterface::refreshWindow() {
 * @return an integer value in milliseconds
 */
 int SDLInterface::getCurrentTicks() {
-	return (int) SDL_GetTicks();
+	return (int)SDL_GetTicks();
 }
 
 /*
@@ -271,7 +272,7 @@ void SDLInterface::drawTexture(int textureId, int sourceX, int sourceY, int sour
 	destRect.x = targetX;
 	destRect.y = targetY;
 	destRect.w = targetWidth;
-	destRect.h = targetHeight;	
+	destRect.h = targetHeight;
 	SDL_RenderCopy(_renderer, textures[textureId], &srcRect, &destRect);
 }
 
@@ -296,7 +297,7 @@ void SDLInterface::drawFlippedTexture(int textureId, int sourceX, int sourceY, i
 	destRect.y = targetY;
 	destRect.w = targetWidth;
 	destRect.h = targetHeight;
-		//By the default the rotation will be done around dstrect.w / 2, dstrect.h / 2) because the parameter fourth parameter is 0
+	//By the default the rotation will be done around dstrect.w / 2, dstrect.h / 2) because the parameter fourth parameter is 0
 	SDL_RenderCopyEx(_renderer, textures[textureId], &srcRect, &destRect, angle, 0, flip);
 }
 
@@ -305,13 +306,13 @@ void SDLInterface::drawFlippedTexture(int textureId, int sourceX, int sourceY, i
 * @param textureId identifies the texture
 * @param fileName is the texture's location
 */
-void SDLInterface::loadTexture(int textureId, std::string fileName) {		
-		//IMG_load from SDL_image extension allow to load many different image formats. The default SDL method called SDL_LoadBMP(...) only works with bmp files
+void SDLInterface::loadTexture(int textureId, std::string fileName) {
+	//IMG_load from SDL_image extension allow to load many different image formats. The default SDL method called SDL_LoadBMP(...) only works with bmp files
 	SDL_Surface* pTempSurface = IMG_Load(fileName.c_str());
 	if (pTempSurface == 0) {
 		ErrorManagement::errorRunTime("[SDLInterface] Impossible to load the texture called " + fileName);
 	}
-		//SDL_Texture is better than SDL_Surface because SDL_Texture can be rendered by the GPU
+	//SDL_Texture is better than SDL_Surface because SDL_Texture can be rendered by the GPU
 	SDL_Texture* pTexture = SDL_CreateTextureFromSurface(_renderer, pTempSurface);
 	SDL_FreeSurface(pTempSurface);
 
@@ -370,7 +371,7 @@ void SDLInterface::drawLine(int r, int g, int b, int a, int x1, int y1, int x2, 
 * @param height is the rectangle height
 */
 void SDLInterface::drawRectangle(int color, int x, int y, int width, int height) {
-	drawRectangle(colorPalette[color].r, colorPalette[color].g, colorPalette[color].b, colorPalette[color].a,x, y, width, height);
+	drawRectangle(colorPalette[color].r, colorPalette[color].g, colorPalette[color].b, colorPalette[color].a, x, y, width, height);
 }
 
 /* Draw a (r,g,b,a) rectangle at (x,y) with the width x height size
@@ -435,12 +436,12 @@ void SDLInterface::setFontStyle(int style) {
 * @param foregroundColor is the indexed color for the foregroundColor
 * @param (x, y) is the reference position
 */
-void SDLInterface::drawText(std::string text, int backgroundColor, int foregroundColor, int x, int y) {		
+void SDLInterface::drawText(std::string text, int backgroundColor, int foregroundColor, int x, int y) {
 	SDL_Surface* textSurface;
-	
+
 	textSurface = TTF_RenderText_Shaded(g_font, text.c_str(), colorPalette[backgroundColor], colorPalette[foregroundColor]);
 	SDL_Texture* textTexture = SDL_CreateTextureFromSurface(_renderer, textSurface);
-	
+
 	SDL_Rect TextLocation;
 	TextLocation.h = textSurface->h;
 	TextLocation.w = textSurface->w;
@@ -453,3 +454,22 @@ void SDLInterface::drawText(std::string text, int backgroundColor, int foregroun
 
 	SDL_DestroyTexture(textTexture);
 }
+void SDLInterface::drawOnlyText(std::string text, int foregroundColor, int x, int y, int size) {
+	SDL_Surface* textSurface;
+
+	textSurface = TTF_RenderText_Blended(g_font, text.c_str(), colorPalette[foregroundColor]);
+	SDL_Texture* textTexture = SDL_CreateTextureFromSurface(_renderer, textSurface);
+
+	SDL_Rect TextLocation;
+	TextLocation.h = textSurface->h + size;
+	TextLocation.w = textSurface->w + size;
+	TextLocation.x = x;
+	TextLocation.y = y;
+
+	SDL_FreeSurface(textSurface);
+
+	SDL_RenderCopy(_renderer, textTexture, NULL, &TextLocation);
+
+	SDL_DestroyTexture(textTexture);
+}
+

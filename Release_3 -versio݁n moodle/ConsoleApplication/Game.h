@@ -14,7 +14,13 @@
 #include "bar.h"
 #include <iostream>
 #include <time.h>
+#include <rapidxml.hpp>
+#include <rapidxml_iterators.hpp>
+#include <rapidxml_print.hpp>
+#include <rapidxml_utils.hpp>
 #include "Score.h"
+using namespace rapidxml;
+using namespace std;
 /*
 * Maneja la ejecución del juego
 */
@@ -27,6 +33,11 @@ public:
 
 private:
 	//Attributes	
+	string playerName;
+	bool writeRanking1, writeRanking2, writeRakning3;
+	int result1, result2, result3;
+	bool activa;
+	bool writeName;
 	bool easy, medium, hard;
 	bool pause = false;
 	std::string _windowTitle;		//SDLInterface Title
@@ -47,12 +58,29 @@ private:
 	void executeMenuCommands();
 	void executeGameMenuCommands();
 	void controlTime();
+	void chooseRanking();
 	void renderGame();
 	void drawMenu();
 	void drawGameMenu();
 	void drawGame();
+	void drawRanking();
+	void readEasyXML();
+	void readMediumXML();
+	void readHardXML();
 	void gameOver();
 	void drawSprite(Sprite & e);
+
+	void createRankingFile(char filename[100]);
+
+	void setNameFile();
+
+	string getNameFile();
+
+	void fileBusinessEndGame();
+
+	void quickSortScore(Score arr[], int left, int right);
+
+	void quickSort(int arr[], int left, int right);
 
 
 	//time:

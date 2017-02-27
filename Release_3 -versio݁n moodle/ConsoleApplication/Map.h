@@ -8,7 +8,6 @@ class Map
 {
 private:
 	
-	int _needToEat;
 	int _score;
 	bool _init;
 	int _xElements;
@@ -20,7 +19,7 @@ private:
 	
 public:
 	int _levelTime;
-
+	int _finalScore;
 	Snake snake;
 	Apple apple;
 	int _level; //Hare los niveles directamente desde map ya que tengo aquí la mayoría de funciones y me gustaría mantener en Game solo los bucles para correr el juego
@@ -46,5 +45,6 @@ public:
 	bool checkApple(int appleX, int appleY, int snakeX, int snakeY);
 	int getScore();
 	int getLevel();
+
 };
 
